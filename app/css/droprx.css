@@ -1,0 +1,50 @@
+body {
+  font-family: sans;
+}
+
+.mainmenu {
+  width: 20%;
+  margin-right: 5%;
+}
+
+.container {
+  width: 100%;
+}
+
+.proplabel {
+  font-weight: bold;
+  background-color: lightgrey;
+}
+
+.datalist {
+  float: left;
+  width: 40%;
+  margin-right: 5%;
+}
+
+.detail {
+  float: right;
+  width: 50%;
+  background-color: RGB(230,230,240);
+}
+
+.propval {
+  background-color: RGB(240,240,250);
+}
+
+.selectedRow {
+  background-color: RGB(250,250,230);
+}
+
+/* css trick for td title which began showing suddenly anyway :)
+td[title]:hover {
+  position: relative;
+}
+
+td[title]:hover:after {
+  content: attr(title);
+  position: absolute;
+  top: 100%;
+  z-index: 20px;
+}
+*/
