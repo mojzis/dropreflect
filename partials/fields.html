@@ -1,0 +1,63 @@
+<div class="row-fluid">
+  <table class="span4">
+    <thead>
+      <tr>
+        <th colspan=2>Search: <input ng-model="searchData">&nbsp;<a>Refresh button</a></th>
+      </tr>
+      <tr>
+        <th>Field</th>
+        <th>Type</th>
+        <th>A</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="f in fields | filter:searchData" ng-click="selectRow($index)" ng-class="rowClass.$index">
+        <td title="{{ f.description }}">{{ f.field_name }}</td>
+        <td>{{ f.type }}</td>
+        <td>{{ f.active }}</td>
+        <!--<td><span ng-repeat="b in e.bundles">{{ b.label }}&nbsp;&nbsp;</span></td> -->
+      </tr>
+    </tbody>
+  </table>
+  <table class="detail span8">
+    <thead>
+      <tr>
+        <th colspan=2>{{ selrowProps.field_name }}</th>
+      </tr>      
+      <tr class="desc">
+        <th colspan=2>{{ selrowProps.description }}</th>
+      </tr>      
+      <tr>
+        <th>Property</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="(key, value) in selrowProps | filter:searchProps">
+        <td class="proplabel">{{ key }}</td>
+        <td class="propval">{{ value }}</td>
+      </tr>
+      <tr><td colspan=2>Storage</td></tr>
+      <tr ng-repeat="(key, value) in selrowStore | filter:searchProps">
+        <td class="proplabel">{{ key }}</td>
+        <td class="propval">{{ value }}</td>
+      </tr>
+      <tr><td colspan=2>Storage Details</td></tr>
+      <tr ng-repeat="(key, value) in selrowStoreDet.sql | filter:searchProps">
+        <td class="proplabel">{{ key }}</td>
+        <td class="propval"><dm-prop-table props="{{ value }}" prp="value" /></td>
+      </tr>
+      <tr><td colspan=2>Columns</td></tr>
+      <tr ng-repeat="(key, value) in selrowCols | filter:searchProps">
+        <td class="proplabel">{{ key }}</td>
+        <td class="propval"><dm-prop-table props="{{ value }}" prp="value" /></td>
+      </tr>
+      <tr><td colspan=2>Settings</td></tr>
+      <tr ng-repeat="(key, value) in selrowSet | filter:searchProps">
+        <td class="proplabel">{{ key }}</td>
+        <td class="propval">{{ value }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" ng-app="dropMeta">
+<head>
+  <meta charset="utf-8">
+  <title>Drop reflect</title>
+  <link rel="stylesheet" href="css/droprx.css"/>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Drop reflect</a>
+          <div ng-controller="MainMenu" class="nav-collapse collapse">
+            <ul class="nav">
+              <li ng-repeat="mi in menu"><a href="#/{{ mi }}">{{ mi }}</a></li>            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+
+  <div ng-view class="container-fluid"></div>
+
+
+  <!-- In production use: -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular-resource.min.js"></script>
+  
+  <!-- For development:
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
+  -->
+  <script src="js/droprx.js"></script>
+</body>
+</html>
