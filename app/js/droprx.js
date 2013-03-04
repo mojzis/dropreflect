@@ -48,11 +48,13 @@ function MainMenu($scope) {
   $scope.menu = ['about', 'fields', 'ents', 'hooks','modules']
 }
 
-function AboutCtrl($scope, Drupal) {}
+function AboutCtrl($rootScope, $scope, Drupal) {
+  
+}
 
-function HooksCtrl($scope, Drupal) {}
+function HooksCtrl($rootScope, $scope, Drupal) {}
 
-function EntsCtrl($scope, Drupal) {
+function EntsCtrl($rootScope, $scope, Drupal) {
     $scope.ents = Drupal.query({what: 'ents'});
     $scope.selectRow = function(index) {
       $scope.selrow = $scope.ents[index];
@@ -60,10 +62,12 @@ function EntsCtrl($scope, Drupal) {
     }
   }
 
-function FieldsCtrl($scope, Drupal) {
+function FieldsCtrl($rootScope, $scope, Drupal) {
+    $scope.selectedRow = 0;
     $scope.rowClass = new Object();
     $scope.fields = Drupal.query({what: 'fields'});
     $scope.selectRow = function(index) {
+      $scope.selectedRow = index;
       $scope.selrowProps = new Object();
       angular.extend($scope.selrowProps, $scope.fields[index]);
       $scope.selrowStore = $scope.selrowProps.storage;
@@ -75,10 +79,8 @@ function FieldsCtrl($scope, Drupal) {
       $scope.selrowSet = $scope.selrowProps.settings;
       $scope.selrowDet = $scope.selrowProps.details;
       delete $scope.selrowProps.storage;
-      
       delete $scope.selrowProps.columns;
       delete $scope.selrowProps.settings;
       delete $scope.selrowProps.details;
-      $scope.rowClass.index = 'selectedRow';
     }
   };

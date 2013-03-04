@@ -12,10 +12,6 @@ body {
   background-color: lightgrey;
 }
 
-.detail {
-  background-color: RGB(230,230,240);
-}
-
 .propval {
   background-color: RGB(240,240,250);
 }

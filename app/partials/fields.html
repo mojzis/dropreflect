@@ -1,8 +1,8 @@
 <div class="row-fluid">
-  <table class="span4">
+  <table class="span4 table table-striped table-hover table-condensed">
     <thead>
       <tr>
-        <th colspan=2>Search: <input ng-model="searchData">&nbsp;<a>Refresh button</a></th>
+        <th colspan=2>Search: <input ng-model="searchData">&nbsp;</th>
       </tr>
       <tr>
         <th>Field</th>
@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="f in fields | filter:searchData" ng-click="selectRow($index)" ng-class="rowClass.$index">
+      <tr ng-repeat="f in fields | filter:searchData" ng-click="selectRow($index)" ng-class="{success:$index==selectedRow}">
         <td title="{{ f.description }}">{{ f.field_name }}</td>
         <td>{{ f.type }}</td>
         <td>{{ f.active }}</td>
@@ -19,13 +19,11 @@
       </tr>
     </tbody>
   </table>
-  <table class="detail span8">
+  <table class="span8 table table-condensed">
+    <caption>{{ selrowProps.description }}</caption>
     <thead>
       <tr>
         <th colspan=2>{{ selrowProps.field_name }}</th>
-      </tr>      
-      <tr class="desc">
-        <th colspan=2>{{ selrowProps.description }}</th>
       </tr>      
       <tr>
         <th>Property</th>
