@@ -5,6 +5,17 @@ angular.module('drupal', ['ngResource'])
     var Drupal = $resource('http://osmna/admin/structure/holmes/:what');
     return Drupal;
     } );
+// todo:
+// add a "global" list of sites (saved in the browser)
+// the default testdata will be added into it
+// show the selected site from a dropdown
+// allow to add a new site from the form
+// check : 
+// - if that site is accessible
+// - if holmes module is installed
+// - if the options return proper values (change the manifest of this ?)
+// then load all the data, one per one, compare them to eventual previous version, mark the change
+
 
 // TODO: connect menu and route provider in one 
 // TODO: set header according to router second answer :
@@ -72,6 +83,7 @@ function EntsCtrl($rootScope, $scope, Drupal) {
 
 function StylesCtrl($rootScope, $scope, Drupal) {
   $scope.styles = Drupal.query({what: 'styles'});
+  // TODO: put some effects data into the basic list (first effect ? , size ...)
   $scope.selectRow = function(index) {
     $scope.selectedRow = index;
     $scope.selrowProps = new Object();
