@@ -22,9 +22,12 @@ fast client based browsing of the important Drupal metadata :
 * deploy system to GH pages
 * Advanced search : Alow to search by entity , field type
 * row selection : allow to select rows by keyboard, colour the selected row. allow to send a link a concrete row ..
-* link field by name
+* link field by name (to be able to jump between lists)
 * refresh button
+* settings page ?
+* fetch data centrally, at once (?)
 
 ### Future
 * Editable : allow to set the properties, where available ..., create new fields ...
 * Site history : follow structure changes in history
+* list views, too ?

@@ -43,12 +43,12 @@
       <tr><td colspan=2>Storage Details</td></tr>
       <tr ng-repeat="(key, value) in selrowStoreDet.sql | filter:searchProps">
         <td class="proplabel">{{ key }}</td>
-        <td class="propval"><dm-prop-table props="{{ value }}" prp="value" /></td>
+        <td class="propval"><dm-prop-table prp="value" /></td>
       </tr>
       <tr><td colspan=2>Columns</td></tr>
       <tr ng-repeat="(key, value) in selrowCols | filter:searchProps">
         <td class="proplabel">{{ key }}</td>
-        <td class="propval"><dm-prop-table props="{{ value }}" prp="value" /></td>
+        <td class="propval"><dm-prop-table prp="value" /></td>
       </tr>
       <tr><td colspan=2>Settings</td></tr>
       <tr ng-repeat="(key, value) in selrowSet | filter:searchProps">
