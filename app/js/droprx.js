@@ -6,7 +6,12 @@ angular.module('drupal', ['ngResource'])
     return Drupal;
     } );
 
-
+// TODO: connect menu and route provider in one 
+// TODO: set header according to router second answer :
+// http://stackoverflow.com/questions/12506329/how-to-dynamically-change-header-based-on-angularjs-partial-view
+// TODO: assign active class in menu
+// TODO: create a google analytics service, listening to routeChangeSuccess
+// TODO: find a way of putting the name o the selected field into the adress, too
 var dropMeta = angular.module('dropMeta', ['drupal'])
 dropMeta.config(function ($routeProvider) {
   $routeProvider
