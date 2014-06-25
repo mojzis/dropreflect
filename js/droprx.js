@@ -2,7 +2,7 @@
 
 angular.module('drupal', ['ngResource'])
   .factory('Drupal', function($resource){
-    var Drupal = $resource('http://mojzis.github.com/dropreflect/data/:what');
+    var Drupal = $resource('http://mojzis.github.io/dropreflect/data/:what');
     return Drupal;
     } );
 
@@ -45,7 +45,7 @@ dropMeta.directive('dmPropTable', function(){
     restrict: 'E',
     scope: {
       props : '@',
-      properties: '=prp',
+      properties: '=prp'
     },
     template:
     '<table><tr ng-repeat="(name, val) in properties"><td>{{name}}</td><td>{{val}}</td></tr></table>'
